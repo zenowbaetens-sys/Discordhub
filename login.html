@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login - DiscordHub</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<nav>
+
+<div class="logo">
+⚡ DiscordHub
+</div>
+
+<div class="menu">
+
+<a href="index.html">Home</a>
+<a href="register.html">Register</a>
+
+</div>
+
+</nav>
+
+</header>
+
+
+
+<section class="features">
+
+
+<div class="card login-card">
+
+<h1>🔐 Login</h1>
+
+<p>
+Log in bij DiscordHub
+</p>
+
+
+<button class="btn" onclick="googleLogin()">
+🔵 Login met Google
+</button>
+
+
+</div>
+
+
+</section>
+
+
+
+<footer>
+
+© 2026 DiscordHub
+
+</footer>
+
+
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+<script src="firebase.js"></script>
+
+
+
+<script>
+
+function googleLogin(){
+
+const provider = new firebase.auth.GoogleAuthProvider();
+
+
+auth.signInWithPopup(provider)
+
+.then(function(result){
+
+let user = result.user;
+
+
+localStorage.setItem("email", user.email);
+
+localStorage.setItem("username", user.displayName);
+
+
+alert("Welkom " + user.displayName + "!");
+
+
+window.location.href="dashboard.html";
+
+
+})
+
+.catch(function(error){
+
+alert("Login fout: " + error.message);
+
+});
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
