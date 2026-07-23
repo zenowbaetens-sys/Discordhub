@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Profiel - DiscordHub</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<nav>
+
+<div class="logo">
+⚡ DiscordHub
+</div>
+
+
+<div class="menu">
+
+<a href="dashboard.html">Dashboard</a>
+<a href="index.html">Home</a>
+
+</div>
+
+</nav>
+
+</header>
+
+
+
+<section class="hero">
+
+
+<div class="card profile-card">
+
+
+<div class="avatar">
+👤
+</div>
+
+
+<h1 id="profileName">
+Gebruiker
+</h1>
+
+
+<p id="profileEmail">
+email@example.com
+</p>
+
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>
+⭐ Rol
+</h3>
+
+<p>
+Gebruiker
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+🌍 Communities
+</h3>
+
+<p>
+0
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+🛒 Aankopen
+</h3>
+
+<p>
+0
+</p>
+
+</div>
+
+
+</div>
+
+
+
+<button class="btn" onclick="logout()">
+Uitloggen
+</button>
+
+
+</div>
+
+
+</section>
+
+
+
+
+<footer>
+
+© 2026 DiscordHub
+
+</footer>
+
+
+
+<script src="script.js"></script>
+
+
+<script>
+
+let username = localStorage.getItem("username");
+let email = localStorage.getItem("email");
+
+
+if(username){
+
+document.getElementById("profileName").innerHTML = username;
+
+}
+
+
+if(email){
+
+document.getElementById("profileEmail").innerHTML = email;
+
+}
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Checkout - DiscordHub</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<nav>
+
+<div class="logo">
+⚡ DiscordHub
+</div>
+
+
+<div class="menu">
+
+<a href="index.html">Home</a>
+<a href="marketplace.html">Marketplace</a>
+<a href="cart.html">Winkelwagen</a>
+
+</div>
+
+</nav>
+
+</header>
+
+
+
+<section class="hero">
+
+
+<div class="card checkout-box">
+
+
+<h1>
+💳 Afrekenen
+</h1>
+
+
+<h2 id="checkoutProduct">
+Product
+</h2>
+
+
+<p id="checkoutPrice">
+Prijs: €0
+</p>
+
+
+
+<input placeholder="Naam">
+
+
+<input placeholder="Email">
+
+
+<button class="btn" onclick="startPayment()">
+💳 Betalen
+</button>
+
+
+
+</div>
+
+
+</section>
+
+
+
+<footer>
+
+© 2026 DiscordHub
+
+</footer>
+
+
+
+
+<script>
+
+
+let product = JSON.parse(
+localStorage.getItem("checkoutProduct")
+);
+
+
+
+if(product){
+
+
+document.getElementById("checkoutProduct").innerHTML =
+"🛒 " + product.name;
+
+
+
+document.getElementById("checkoutPrice").innerHTML =
+"Prijs: €" + product.price;
+
+
+}
+
+function startPayment(){
+
+alert("Betaling wordt voorbereid...");
+
+}
+
+</script>
+
+
+
+</body>
+
+</html>
